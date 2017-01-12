@@ -5,11 +5,11 @@ Bacteria [] colony;
  void setup()   
  {     
   size(800,800);
-  colony=new Bacteria[30000];
+  colony=new Bacteria[300];
   for(int i=0;i<colony.length;i++){
     colony[i] = new Bacteria();
    }
-   colon=new Bacterium[30000];
+   colon=new Bacterium[300];
   for(int i=0;i<colon.length;i++){
     colon[i] = new Bacterium();
   }
