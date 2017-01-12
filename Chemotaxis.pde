@@ -4,7 +4,7 @@ Bacterium [] colon;
 Bacteria [] colony;   
  void setup()   
  {     
-  size(400,400);
+  size(800,800);
   colony=new Bacteria[20];
   for(int i=0;i<colony.length;i++){
     colony[i] = new Bacteria();
@@ -35,8 +35,8 @@ int colorG;
 int colorB;
 int size;
 Bacteria(){
-   x=(int)(Math.random()*400);
-   y=(int)(Math.random()*400);
+   x=(int)(Math.random()*800);
+   y=(int)(Math.random()*800);
    colorR=(int)(Math.random()*250);
    colorG=(int)(Math.random()*250);
    colorB=(int)(Math.random()*250);
@@ -88,8 +88,8 @@ int colorG;
 int colorB;
 int size;
 Bacterium(){
-   x=(int)(Math.random()*400);
-   y=(int)(Math.random()*400);
+   x=(int)(Math.random()*800);
+   y=(int)(Math.random()*800);
    colorR=(int)(Math.random()*250);
    colorG=(int)(Math.random()*250);
    colorB=(int)(Math.random()*250);
