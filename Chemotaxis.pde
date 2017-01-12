@@ -1,13 +1,127 @@
- //declare bacteria variables here   
+
+ 
+Bacterium [] colon;
+Bacteria [] colony;   
  void setup()   
  {     
- 	//initialize bacteria variables here   
- }   
+  size(400,400);
+  colony=new Bacteria[20];
+  for(int i=0;i<colony.length;i++){
+    colony[i] = new Bacteria();
+   }
+   colon=new Bacterium[20];
+  for(int i=0;i<colon.length;i++){
+    colon[i] = new Bacterium();
+  }
+ }
  void draw()   
- {    
- 	//move and show the bacteria   
+ { 
+  background(0,0,0);
+  for (int i=0;i<colony.length;i++){
+  colony[i].show();
+  colony[i].move(); 
+ }
+ for (int i=0;i<colon.length;i++){
+  colon[i].show();
+  colon[i].move(); 
+ }
  }  
  class Bacteria    
- {     
- 	//lots of java!   
- }    
+ {
+   int x;
+int y;
+int colorR;
+int colorG;
+int colorB;
+int size;
+Bacteria(){
+   x=(int)(Math.random()*400);
+   y=(int)(Math.random()*400);
+   colorR=(int)(Math.random()*250);
+   colorG=(int)(Math.random()*250);
+   colorB=(int)(Math.random()*250);
+   size=(int)(Math.random()*50);
+}
+  void show(){
+    fill(colorR,colorG,colorB);
+    ellipse(x,y,size,size);
+ }
+ void move(){
+   if(mouseX>x && mouseY>y){
+     x=x+(int)(Math.random()*8);
+     x=x-(int)(Math.random()*3);
+     y=y+(int)(Math.random()*8);
+     y=y-(int)(Math.random()*3);
+ }
+ else if(mouseX<x && mouseY>y){
+     x=x-(int)(Math.random()*8);
+     x=x+(int)(Math.random()*3);
+     y=y+(int)(Math.random()*8);
+     y=y-(int)(Math.random()*3);
+ }
+else if(mouseX>x && mouseY<y){
+     x=x+(int)(Math.random()*8);
+     x=x-(int)(Math.random()*3);
+     y=y-(int)(Math.random()*8);
+     y=y+(int)(Math.random()*3);
+ }
+else if(mouseX<x && mouseY<y){
+     x=x-(int)(Math.random()*8);
+     x=x+(int)(Math.random()*3);
+     y=y-(int)(Math.random()*8);
+     y=y+(int)(Math.random()*3);
+ }
+ else {
+   x=x+(int)(Math.random()*8);
+   x=x-(int)(Math.random()*8);
+   y=y+(int)(Math.random()*8);
+   y=y-(int)(Math.random()*8);
+ }
+ }
+ }
+  class Bacterium    
+ {
+   int x;
+int y;
+int colorR;
+int colorG;
+int colorB;
+int size;
+Bacterium(){
+   x=(int)(Math.random()*400);
+   y=(int)(Math.random()*400);
+   colorR=(int)(Math.random()*250);
+   colorG=(int)(Math.random()*250);
+   colorB=(int)(Math.random()*250);
+   size=(int)(Math.random()*50);
+}
+  void show(){
+    fill(colorR,colorG,colorB);
+    rect(x,y,size,size);
+ }
+ void move(){
+   if(mouseX>x && mouseY>y){
+     x=x+(int)(Math.random()*30);
+     y=y+(int)(Math.random()*30);
+ }
+ else if(mouseX<x && mouseY>y){
+     x=x-(int)(Math.random()*30);
+     y=y+(int)(Math.random()*30);
+ }
+else if(mouseX>x && mouseY<y){
+     x=x+(int)(Math.random()*30);
+     y=y-(int)(Math.random()*30);
+ }
+else if(mouseX<x && mouseY<y){
+     x=x-(int)(Math.random()*30);
+     y=y-(int)(Math.random()*30);
+ }
+ else {
+   x=x+(int)(Math.random()*30);
+   x=x-(int)(Math.random()*30);
+   y=y+(int)(Math.random()*30);
+   y=y-(int)(Math.random()*30);
+ }
+ }
+ }
+ 
